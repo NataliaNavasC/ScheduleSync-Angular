@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import '_variables';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.background-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(65, 65, 65);
+}
+
+.container{
+    background: rgb(29, 29, 29);
+}
+
+
+.card-content{
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    
+}
+
+
+
+.dark-background{
+    background-color: $color_primary_dark;
+}
+
+
+// Colors
+.color-white{
+    color: $color_primary_white;
+}
+
