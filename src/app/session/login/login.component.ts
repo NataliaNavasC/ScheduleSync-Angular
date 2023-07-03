@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { SessionService } from 'src/app/services/session.service';
+import { SessionService } from 'src/app/services/session/session.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { LoginDTO } from 'src/model/LoginDTO';
 import { User } from 'src/model/User';
 
 @Component({
@@ -9,17 +11,39 @@ import { User } from 'src/model/User';
 })
 export class LoginComponent {
   
-  public user:User;
-  public session:SessionService;
+  public user:LoginDTO;
+  public invalidCredentials:boolean;
 
-  constructor(public sessionService:SessionService){
-    this.user = new User(0,"", "",false,false); 
-    this.session = sessionService;
+  constructor(public sessionService:SessionService, public userService:UserService){
+    this.user = new LoginDTO(); 
+    this.invalidCredentials = false;
   }
 
   public login(){
     this.sessionService.login(this.user).subscribe( (resp) => {
-      console.log(resp);
+      sessionStorage.setItem('token', resp.headers.get('Authorization') || "");
+      if(this.loginSuccess())
+      {
+        let user = this.userService.findByUsername(this.user.username).subscribe(
+          (res:User) => {
+            if(res!=null){
+              localStorage.setItem("user",res.username);
+              // this.router.navigate(['home']);
+              console.log("Navigate to next home page");
+            }
+          });
+      }else{
+        this.invalidCredentials = true;
+      }
     });
+  }
+
+
+  private loginSuccess(){
+    let token:string = sessionStorage.getItem('token') || "";
+    if(token === ""){
+      return false;
+    }
+    return true;
   }
 }
