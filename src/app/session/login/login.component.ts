@@ -28,6 +28,7 @@ export class LoginComponent {
           (res:User) => {
             if(res!=null){
               localStorage.setItem("user",res.username);
+              sessionStorage.setItem('role', res.role);
               // this.router.navigate(['home']);
               console.log("Navigate to next home page");
             }
