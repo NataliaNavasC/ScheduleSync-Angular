@@ -1,0 +1,23 @@
+<div class="background-container dark-background">
+    <mat-card class="card-content">
+        <mat-card-content>
+            <form (submit)="login()">
+                <p>
+                    <mat-form-field appearance="outline" class="color-white">
+                        <mat-label>Username</mat-label>
+                        <input matInput placeholder="Placeholder" name="usernameInput" #usernameInput="ngModel" [(ngModel)]="user.username">
+                        <mat-icon matSuffix class="color-white">person</mat-icon>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Placeholder" name="paswordInput" #paswordInput="ngModel" [(ngModel)]="user.password">
+                        <mat-icon matSuffix class="color-white">password</mat-icon>
+                    </mat-form-field>
+                </p>
+                <button mat-raised-button class="dark-background" type="submit">Login</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

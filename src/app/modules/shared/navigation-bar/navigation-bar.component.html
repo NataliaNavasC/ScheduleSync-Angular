@@ -1,0 +1,18 @@
+<section class="w-100 h-100">
+    <mat-toolbar class="d-flex flex-row justify-between bg-primary-color">
+        <span [routerLink]="['/home']" class="color-white cursor-pointer">Schedulock Sync</span>
+        <button mat-button [routerLink]="['/student-session']">
+            <span class="color-white">Student Sessions</span>
+            <mat-icon class="color-white">person</mat-icon>
+        </button>
+        <button mat-button [routerLink]="['/student-session']">
+            <span class="color-white">Student Sessions</span>
+            <mat-icon class="color-white">person</mat-icon>
+        </button>
+        <button mat-button [routerLink]="['/student-session']">
+            <span class="color-white">Log Out</span>
+            <mat-icon class="color-white">cancel</mat-icon>
+        </button>
+    </mat-toolbar>
+    <router-outlet class="w-100 h-90"></router-outlet>
+</section>

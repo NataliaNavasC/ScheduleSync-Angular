@@ -9,3 +9,54 @@ $color_primary_grey: #646569;
 $color_light_grey: #f8f9fb;
 $color_primary_red: #bc4a4a;
 $color_primary_dark: #202020;
+
+
+/* SECUNDARY COLOR PALETTE */
+
+$color_error_message: red;
+$color_background_pages: #64656933;
+$color_background_transparent_hover: rgb(0,0,0,.2);
+$color_odd_row: #accb4605;
+$color_even_row: #00397305;
+$color_status_active: #66992c;
+$color_status_inactive: #bc4a4a;
+$color_grey_background: #e8edf4;
+
+/* RADIUS */
+
+$radius_corner_panel: 10px;
+
+/* FONT */
+
+$font_size_title: calc(0.7em + 100%);
+$font_size_input_label: calc(0.5em + 50%);
+$font_size_error_text: calc(0.3em + 50%);
+$font_size_button: calc(0.5em + 50%);
+$font_color_white: #fff;
+$font_color_black: #000;
+
+/* SHADOWS */
+
+$shadow_right_bottom: 12px 12px 5px 2px rgba(90,90,90,0.5);
+$shadow_button_right_bottom: 1px 1px 9px 4px rgba(90,90,90,0.5);
+$shadow_tab_header_bottom: 3px 3px 10px 3px rgba(90,90,90,0.2);
+
+/* ICONS */
+
+$icon_size_normal: calc(0.8em + 100%);
+$icon_size_large: calc(2.5em + 100%);
+$icon_color_white: #fff;
+$icon_color_blue: #003973;
+
+/* ANIMATIONS */
+
+$animation_button_scale: scale(1.03);
+$animation_button_time: 0.5s;
+$animation_button_hover_color: #013366;
+
+
+/* SCROLL BARS */
+$scroll_bar_width: 7px;
+$scroll_bar_height: 7px;
+$scroll_bar_border_radius: 10px;
+$scroll_bar_color: rgba(0, 0, 0, .5);

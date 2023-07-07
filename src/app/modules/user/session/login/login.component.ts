@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { SessionService } from 'src/app/services/session/session.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { LoginDTO } from 'src/model/LoginDTO';
@@ -14,7 +15,7 @@ export class LoginComponent {
   public user:LoginDTO;
   public invalidCredentials:boolean;
 
-  constructor(public sessionService:SessionService, public userService:UserService){
+  constructor(public sessionService:SessionService, public userService:UserService, public router:Router){
     this.user = new LoginDTO(); 
     this.invalidCredentials = false;
   }
@@ -29,7 +30,7 @@ export class LoginComponent {
             if(res!=null){
               localStorage.setItem("user",res.username);
               sessionStorage.setItem('role', res.role);
-              // this.router.navigate(['home']);
+              this.router.navigate(['home']);
               console.log("Navigate to next home page");
             }
           });
