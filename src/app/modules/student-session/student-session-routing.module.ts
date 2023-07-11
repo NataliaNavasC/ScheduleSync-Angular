@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentSessionComponent } from './student-session.component';
 import { StudentSessionListComponent } from './student-session-list/student-session-list.component';
+import { StudentSessionViewComponent } from './student-session-view/student-session-view.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,12 @@ const routes: Routes = [
       {
           path:"",
           component:StudentSessionListComponent
-      }      
+      },
+      {
+        path: ':id',
+        component:StudentSessionViewComponent
+      } 
+
     ]
   }
 ];

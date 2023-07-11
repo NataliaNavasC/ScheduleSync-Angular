@@ -1,0 +1,15 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Student session</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content *ngIf="studentSession!=undefined">
+      <p>Date: {{studentSession.scheduledSession.date}}</p>
+      <p>Status: {{studentSession.studentSessionStatus}}</p>
+      <p>Topic: {{studentSession.scheduledSession.session.topic}}</p>
+      <p>Teacher: {{studentSession.scheduledSession.teacher.username}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="warn" (click)="deleteStudentsession()">Delete</button>
+    </mat-card-actions>
+</mat-card>

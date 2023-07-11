@@ -1,0 +1,38 @@
+<table mat-table [dataSource]="table" class="mat-elevation-z8">
+    
+    <!-- Date Column -->
+    <ng-container matColumnDef="Date">
+        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.date}} </mat-cell>
+    </ng-container>
+    
+    <!-- Teacher Column -->
+    <ng-container matColumnDef="Teacher" >
+        <mat-header-cell *matHeaderCellDef> Teacher </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.teacher.username}} </mat-cell>
+    </ng-container>
+
+    <!-- <div *ngIf="this.role == 'TEACHER'">
+        <ng-container matColumnDef="Topic">
+            <mat-header-cell *matHeaderCellDef> Topic </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.session.topic}} </mat-cell>
+        </ng-container>
+    </div> -->
+    
+    <!-- Teacher Column -->
+    <ng-container matColumnDef="Schedule">
+        <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+        <mat-cell *matCellDef="let row"> 
+            <div class="example-button-container">
+                <button mat-fab extended color="warn" (click)="createStudentSession(row)"> 
+                    <mat-icon>event</mat-icon>
+                    Schedule
+                </button>
+            </div>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+</table>
+

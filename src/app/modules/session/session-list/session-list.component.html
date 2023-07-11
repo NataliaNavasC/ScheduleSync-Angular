@@ -1,0 +1,33 @@
+<table mat-table [dataSource]="table" class="mat-elevation-z8">
+    
+    <!-- Date Column -->
+    <ng-container matColumnDef="Topic">
+        <mat-header-cell *matHeaderCellDef> Topic </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.topic}} </mat-cell>
+    </ng-container>
+    
+    <!-- Status Column -->
+    <ng-container matColumnDef="SessionType">
+        <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.sessionType}} </mat-cell>
+    </ng-container>
+    
+    <!-- Teacher Column -->
+    <ng-container matColumnDef="Schedule">
+        <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+        <mat-cell *matCellDef="let row"> 
+            <div class="example-button-container">
+                <!-- <button mat-mini-fab color="color-red" aria-label="Example icon button with a plus one icon" [routerLink]="['/student-session/'+row.id]">
+                  <mat-icon>arrow_right_alt</mat-icon>
+                </button> -->
+                <button mat-mini-fab color="color-red" aria-label="Example icon button with a plus one icon" [routerLink]="['/session/'+row.id]"> 
+                    <mat-icon>arrow_right_alt</mat-icon>
+                </button>
+            </div>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+</table>
+

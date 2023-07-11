@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Session</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content *ngIf="session!=undefined">
+      <p>Topic: {{session.topic}}</p>
+      <p>Session Type: {{session.sessionType}}</p>
+    </mat-card-content>
+    <!-- <mat-card-actions>
+      <button mat-button>Edit</button>
+    </mat-card-actions> -->
+</mat-card>
+<app-scheduled-session-list *ngIf="session!=undefined" [sessionId]="session.id"></app-scheduled-session-list>
